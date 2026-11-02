@@ -2,7 +2,7 @@
 
 A small Linux runtime for learning about namespaces, process supervision, threaded logging, scheduling, and kernel memory monitoring. One supervisor manages multiple containers through a local CLI.
 
-[![Runtime checks](https://github.com/kishansaaai/Multi-Container-Runtime/actions/workflows/ci.yml/badge.svg)](https://github.com/kishansaaai/Multi-Container-Runtime/actions/workflows/ci.yml)
+[![Runtime checks](https://github.com/SamatmaAB/Multi-Container-Runtime/actions/workflows/ci.yml/badge.svg)](https://github.com/SamatmaAB/Multi-Container-Runtime/actions/workflows/ci.yml)
 
 ## Scope and requirements
 
@@ -157,4 +157,10 @@ Tests cover argument forwarding, invalid/truncated IPC, binary logs larger than 
 
 Logging uses one joinable producer per container and a single consumer. An ordered end-of-log marker ensures the last byte is consumed before returning the exit status. Shutdown never destroys synchronization objects while producers can still use them.
 
-Original demonstration images remain in [`screenshots/`](screenshots/). They show an earlier version's output and paths; the instructions above describe the current implementation.
+See [`screenshots/`](screenshots/) for terminal captures of the CLI, container lifecycle, and workloads. They show output from the current build in Ubuntu WSL.
+
+![Runtime CLI overview](screenshots/runtime-cli.png)
+
+![Container lifecycle](screenshots/container-lifecycle.png)
+
+![Workload output](screenshots/workloads.png)
